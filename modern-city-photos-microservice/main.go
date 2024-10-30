@@ -18,6 +18,8 @@ type function func(http.ResponseWriter,*http.Request)error
 
 func Check(f function )func(w http.ResponseWriter,r *http.Request){
 	return func(w http.ResponseWriter,r *http.Request){
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Content-Type", "application/json")
 		err := f(w,r)
 		if err!=nil{
 			msg,_ := json.Marshal(fmt.Sprintf("error, %v", err))

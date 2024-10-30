@@ -6,7 +6,7 @@ function ModernCityPhotos() {
     const [photos,setPhotos] = useState([])
 
     async function FetchModernCityPhotos() {
-        const resp = await axios.get("/api/cities")
+        const resp = await axios.get("http://localhost:3142/api/cities")
         console.log(resp)
         setPhotos([...resp.data])
     }

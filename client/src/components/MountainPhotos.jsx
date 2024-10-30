@@ -6,7 +6,7 @@ function MountainPhotos() {
     const [photos,setPhotos] = useState([])
 
     async function FetchMountainPhotos() {
-        const resp = await axios.get("/api/mountains")
+        const resp = await axios.get("http://localhost:3143/api/mountains")
         setPhotos([...resp.data])
     }
     useEffect(()=>{
