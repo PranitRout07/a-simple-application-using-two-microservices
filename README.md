@@ -56,7 +56,7 @@ kubectl apply -k .\manifest_files\env\dev\
 
 ```
 kubectl port-forward svc/client-svc -n client 3000:3000 
-kubectl port-forward svc/cities-svc -n ingress-nginx 3142:3142 
+kubectl port-forward svc/cities-svc -n cities 3142:3142 
 kubectl port-forward svc/mountains-svc -n mountains 3143:3143 
 ```
 
