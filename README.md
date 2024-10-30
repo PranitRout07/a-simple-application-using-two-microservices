@@ -52,7 +52,7 @@ kubectl apply -k .\manifest_files\env\dev\
 ```
 
 
-3. If in the local environment use port forward to access the nginx service through browser
+3. Port forward each service to access from browser
 
 ```
 kubectl port-forward svc/client-svc -n client 3000:3000 
