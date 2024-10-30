@@ -1,0 +1,31 @@
+resources:
+  - ../../app
+  - ingress.yaml
+
+
+patches:
+  - target:
+      group: apps 
+      version: v1 
+      kind: Deployment
+      name: photos-client
+      
+    path: ./prod_deployment_patches.yaml
+  - target:
+      group: apps 
+      version: v1 
+      kind: Deployment
+      name: cities
+    path: ./prod_deployment_patches.yaml
+  - target:
+      group: apps 
+      version: v1 
+      kind: Deployment
+      name: mountains
+    path: ./prod_deployment_patches.yaml
+
+
+
+images:
+  - name: pranit007/photos-client
+    newTag: prod

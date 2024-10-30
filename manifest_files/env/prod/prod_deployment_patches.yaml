@@ -1,0 +1,36 @@
+- op: replace 
+  path: /spec/replicas 
+  value: 3 
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: photos-client
+#   namespace: client
+#   labels:
+#     key: app
+# spec:
+#   replicas: 3
+# --- 
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: cities
+#   namespace: cities
+#   labels:
+#     key: app
+# spec:
+#   replicas: 3
+
+# --- 
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: mountains
+#   namespace: mountains
+#   labels:
+#     key: app
+# spec:
+#   replicas: 3

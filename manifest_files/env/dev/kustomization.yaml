@@ -1,0 +1,27 @@
+resources:
+  - ../../app
+
+patches:
+  - target:
+      group: apps 
+      version: v1 
+      kind: Deployment
+      name: photos-client
+      
+    path: ./dev_deployment_patches.yaml
+  - target:
+      group: apps 
+      version: v1 
+      kind: Deployment
+      name: cities
+    path: ./dev_deployment_patches.yaml
+  - target:
+      group: apps 
+      version: v1 
+      kind: Deployment
+      name: mountains
+    path: ./dev_deployment_patches.yaml
+
+images:
+  - name: pranit007/photos-client
+    newTag: dev

@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: photos-client
+  namespace: client
+  labels:
+    key: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels: 
+      key: app
+  template:
+    metadata:
+      labels:
+        key: app
+    spec:
+      containers:
+      - image: pranit007/photos-client
+        name: photos-client
+        ports:
+        - containerPort: 3000
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cities
+  namespace: cities
+  labels:
+    key: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels: 
+      key: app
+  template:
+    metadata:
+      labels:
+        key: app
+    spec:
+      containers:
+      - image: pranit007/cities
+        name: cities 
+        ports:
+        - containerPort: 3142
+--- 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mountains
+  namespace: mountains
+  labels:
+    key: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels: 
+      key: app
+  template:
+    metadata:
+      labels:
+        key: app
+    spec:
+      containers:
+      - image: pranit007/mountains
+        name: mountains
+        ports:
+        - containerPort: 3143
